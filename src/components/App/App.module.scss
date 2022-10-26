@@ -1,0 +1,13 @@
+@import "../../assets/styles/vars";
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: $app-bg;
+  min-height: 100vh;
+}
+
+
