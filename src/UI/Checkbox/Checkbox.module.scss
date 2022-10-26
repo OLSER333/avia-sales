@@ -1,0 +1,47 @@
+@import "../../assets/styles/vars";
+
+.checkbox {
+  display: flex;
+  gap: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &:hover {
+    background: #F1FCFF;
+    transition: all $tr-time ease;
+  }
+}
+
+.inp {
+  appearance: none;
+  background: $windows-bg;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: 1px solid #2196F3;
+  border-radius: 2px;
+  cursor: pointer;
+
+}
+
+.inp:checked:before {
+  $chech-mark-width: 12px;
+  $chech-mark-height: 8px;
+  content: '';
+  position: absolute;
+  left: calc(50% - $chech-mark-width / 2);
+  top: calc(50% - $chech-mark-height / 2);
+  background: url('../../assets/img/mark.svg') 0 0 / contain no-repeat;
+  width: $chech-mark-width;
+  height: 8px;
+}
+
+
+.label {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  text-transform: initial;
+  cursor: pointer;
+
+}

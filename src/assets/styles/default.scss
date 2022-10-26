@@ -4,5 +4,8 @@ body {
   font-family: $ff;
   font-weight: $fw;
   font-size: $fsz;
-  color: $usual-txt-color
+  color: $usual-txt-color;
+
+  line-height: 1.2;
+  text-transform: uppercase;
 }

@@ -1,3 +1,13 @@
 @import "../../../assets/styles/vars";
 
-.
+.window {
+  background: $windows-bg;
+  display: flex;
+  flex-direction: column;
+  //padding: $windows-padding;
+}
+
+.header {
+  padding: 20px 20px 10px 20px;
+  letter-spacing: 0.5px;
+}

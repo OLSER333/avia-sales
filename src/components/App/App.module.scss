@@ -8,6 +8,11 @@
   margin: 0 auto;
   background: $app-bg;
   min-height: 100vh;
+  width: 100%;
 }
 
-
+.appWrap {
+  max-width: $max-w;
+  display: flex;
+  gap: 20px;
+}
