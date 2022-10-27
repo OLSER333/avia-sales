@@ -1,0 +1,44 @@
+@import "../../assets/styles/vars";
+.btn {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #DFE5EC;
+  cursor: pointer;
+
+  font-family: $ff;
+  font-weight: $fw;
+  font-size: $fsz;
+  color: $usual-txt-color;
+
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  &:hover {
+    background: #F1FCFF;
+    color: $usual-txt-color;
+    transition: all $tr-time ease;
+  }
+}
+
+.btn_active {
+  color: #fff;
+  background: $prim-color;
+  &:hover {
+    background: $prim-dark-color;
+    color: #fff;
+    transition: all $tr-time ease;
+  }
+}
+.first {
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+}
+
+.last {
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+}
+
+.radiused {
+  border-radius: $border-radius;
+}

@@ -14,5 +14,19 @@
 .appWrap {
   max-width: $max-w;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.wrapWithoutLogo {
+  display: flex;
+  gap: 20px;
+
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
