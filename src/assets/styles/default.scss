@@ -11,4 +11,9 @@ body {
 
   line-height: 1.2;
   text-transform: uppercase;
+
+  @media (max-width:$toBurger) {
+  font-size: calc($fsz - 1px);
+  }
 }
+

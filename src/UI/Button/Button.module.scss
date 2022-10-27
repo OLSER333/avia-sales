@@ -12,11 +12,16 @@
 
   line-height: 1.2;
   text-transform: uppercase;
+  height: 100%;
 
   &:hover {
     background: #F1FCFF;
     color: $usual-txt-color;
     transition: all $tr-time ease;
+  }
+
+  @media (max-width:$toMobile) {
+    padding: 10px 7px;
   }
 }
 

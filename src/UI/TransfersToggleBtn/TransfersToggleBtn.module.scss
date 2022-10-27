@@ -1,0 +1,68 @@
+@import "../../assets/styles/vars";
+
+.btn {
+  position: fixed;
+  bottom: 5%;
+  cursor: pointer;
+  transition: all $tr-time ease;
+
+}
+
+.closeBtn {
+  $size: 50px;
+  width: $size;
+  height: $size;
+  left: calc(50% - $size / 2);
+  border: 2px solid $usual-txt-color;
+  border-radius: 50%;
+  background: $windows-bg;
+  transition: all $tr-time ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: calc($size / 2);
+    height: 2px;
+    background: $usual-txt-color;
+    transform: rotate(45deg);
+  }
+
+  &::before:hover {
+    transform: rotate(315deg);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: calc($size / 2);
+    height: 2px;
+    background: $usual-txt-color;
+    transform: rotate(-45deg);
+  }
+  &::after:hover {
+    transform: rotate(270deg);
+  }
+}
+
+.openBtn {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+  $openBtnWidth: 200px;
+  width: 200px;
+  padding: 10px 15px;
+  left: calc(50% - $openBtnWidth / 2);
+  border: unset;
+  border-radius: 30px;
+  background: $prim-color;
+  color: #fff;
+  &:hover {
+    background: $prim-dark-color;
+  }
+}

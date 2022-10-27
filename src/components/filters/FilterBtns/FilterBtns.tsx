@@ -7,7 +7,7 @@ const FilterBtns = () => {
 
   // хочу сделать два типа first | last -> присваивать соотв. класс для
 
-  const isFar = (idx: number) => {
+  const isRadiused = (idx: number) => {
     if (idx === 0) {
       return 'first'
     } else if (idx === btnsFilterList.length - 1) {
@@ -23,7 +23,7 @@ const FilterBtns = () => {
         {btnsFilterList.map((btn, idx) => {
           return (
             <li key={btn}>
-              <Button addClass={isFar(idx)}>{btn}</Button>
+              <Button addClass={isRadiused(idx)}>{btn}</Button>
             </li>
           )
         })}

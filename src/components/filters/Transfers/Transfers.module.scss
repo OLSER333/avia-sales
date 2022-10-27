@@ -1,4 +1,5 @@
 @import "../../../assets/styles/vars";
+$tempWidth: 416px;
 
 .window {
   background: $windows-bg;
@@ -7,7 +8,29 @@
   border-radius: $border-radius;
   padding-bottom: 10px;
   height: 100%;
-  //padding: $windows-padding;
+  transition: all $tr-time ease;
+  @media (max-width: $toBurger) {
+    width: $tempWidth;
+    position: fixed;
+    left: -100%;
+    top: 0;
+  }
+
+  @media (max-width: $toMobile) {
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    left: -100%;
+  }
+}
+.windowIsOpen {
+  @media (max-width: $toBurger) {
+    left: calc(50% - $tempWidth / 2);
+  }
+
+  @media (max-width: $toMobile) {
+    left: 0;
+  }
 }
 
 .header {
