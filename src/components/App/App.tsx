@@ -1,5 +1,4 @@
 import React from 'react'
-
 import cl from './App.module.scss'
 import Transfers from '../filters/Transfers/Transfers'
 import FilterBtns from '../filters/FilterBtns/FilterBtns'

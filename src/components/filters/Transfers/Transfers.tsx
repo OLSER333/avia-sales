@@ -10,20 +10,18 @@ const Transfers = () => {
   const [isMobile, setIsMobile] = useState(document.documentElement.clientWidth < 700)
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    function onResize(e) {
-      const width = e.currentTarget.innerWidth
-      if (width <= 700 && !isOpen) {
+    const onResize: (e: UIEvent) => void = (e) => {
+      const w = e.target as Window
+      if (w.innerWidth <= 700 && !isOpen) {
         setIsMobile(true)
-      } else if (width > 700) {
+      } else if (w.innerWidth > 700) {
         setIsMobile(false)
       }
     }
 
-    window.addEventListener('resize', (e) => onResize(e))
+    window.addEventListener('resize', onResize)
     return () => {
-      window.removeEventListener('resize', (e) => onResize(e))
+      window.removeEventListener('resize', onResize)
     }
   })
 
