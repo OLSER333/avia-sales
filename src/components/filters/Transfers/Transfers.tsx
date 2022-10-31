@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import cl from './Transfers.module.scss'
 
-import { v4 as uuidv4 } from 'uuid'
 import Checkbox from '../../../UI/Checkbox/Checkbox'
-// import Button from '../../../UI/Button/Button'
 import TransfersToggleBtn from '../../../UI/TransfersToggleBtn/TransfersToggleBtn'
+import { useTypedSelector } from '../../../hooks/useTypedSelector'
 const Transfers = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(document.documentElement.clientWidth < 700)
@@ -23,21 +22,23 @@ const Transfers = () => {
     return () => {
       window.removeEventListener('resize', onResize)
     }
-  })
+  }, [])
 
-  const formCheckBoxes: Array<string> = [
-    'Всё',
-    'Без пересадок',
-    '1 пересадка',
-    '2 пересадки',
-    '3 пересадки',
-  ]
+  const { data } = useTypedSelector((state) => state.transfersReducer)
+  console.log(data)
+
   return (
     <div className={`${cl.window} ${isOpen ? cl.windowIsOpen : ''}`}>
       <h2 className={cl.header}>Количество пересадок</h2>
       <form action=''>
-        {formCheckBoxes.map((el, idx) => (
-          <Checkbox key={uuidv4()} label={el} id={idx} />
+        {data.map((el) => (
+          <Checkbox
+            key={el.id}
+            label={el.label}
+            id={el.id}
+            checked={el.isChecked}
+            isAll={el.id === data[0].id}
+          />
         ))}
       </form>
       {isMobile && (
