@@ -12,7 +12,7 @@ type CheckboxPropsType = {
 // label, id получаю из
 
 const Checkbox = ({ label, id, checked, isAll }: CheckboxPropsType) => {
-  const { toggleTransfers, toggleAllTransfers } = useAction()
+  const { toggleTransfers, toggleAllTransfers, resetShowCount } = useAction()
 
   const toggleInp = () => {
     if (isAll) {
@@ -20,12 +20,13 @@ const Checkbox = ({ label, id, checked, isAll }: CheckboxPropsType) => {
     } else {
       toggleTransfers(id, !checked)
     }
+    resetShowCount()
   }
 
   return (
     <div className={cl.checkbox} onClick={toggleInp}>
-      <input className={cl.inp} id={String(id)} type='checkbox' checked={checked} />
-      <label className={cl.label} htmlFor={String(id)}>
+      <input className={cl.inp} id={id} type='checkbox' checked={checked} />
+      <label className={cl.label} htmlFor={`#${id}`}>
         {label}
       </label>
     </div>

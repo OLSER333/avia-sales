@@ -4,15 +4,10 @@ import cl from './Spin.module.scss'
 
 type spinPropsType = {
   isLoading: boolean
-  hasError: boolean
 }
 
-const Spin = ({ isLoading, hasError }: spinPropsType) => {
-  return (
-    <div hidden={!isLoading && !hasError} className={cl.spin}>
-      123
-    </div>
-  )
+const Spin = ({ isLoading }: spinPropsType) => {
+  return <div hidden={!isLoading} className={cl.spin}></div>
 }
 
 export default Spin

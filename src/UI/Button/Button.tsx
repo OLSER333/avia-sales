@@ -1,13 +1,15 @@
 import React from 'react'
 
 import cl from './Button.module.scss'
+import { TicketsAction } from '../../types/tickets'
 
 type btnType = {
   children?: string
   addClass: string
+  onShowMore?: () => TicketsAction
 }
 
-const Button = ({ addClass, children }: btnType) => {
+const Button = ({ addClass, children, onShowMore }: btnType) => {
   const getRadiusClass = () => {
     if (addClass === 'first') return cl.first
     else if (addClass === 'last') return cl.last
@@ -16,7 +18,9 @@ const Button = ({ addClass, children }: btnType) => {
   }
   return (
     <>
-      <button className={`${cl.btn} ${getRadiusClass()}`}>{children}</button>
+      <button onClick={onShowMore} className={`${cl.btn} ${getRadiusClass()}`}>
+        {children}
+      </button>
     </>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import cl from './App.module.scss'
 import Transfers from '../filters/Transfers/Transfers'
-import FilterBtns from '../filters/FilterBtns/FilterBtns'
+import SotringBtns from '../filters/SotringBtns/SotringBtns'
 import Logo from '../../UI/Logo/Logo'
 import ListOfTickets from '../ListOfTickets/ListOfTickets'
 
@@ -13,7 +13,7 @@ const App = () => {
         <div className={cl.wrapWithoutLogo}>
           <Transfers />
           <div className={cl.mainInfo}>
-            <FilterBtns />
+            <SotringBtns />
             <ListOfTickets />
           </div>
         </div>

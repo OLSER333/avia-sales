@@ -2,6 +2,7 @@ export interface TransferBox {
   id: string
   isChecked: boolean
   label: string
+  transfersCount?: number
 }
 
 export interface Transfers {

@@ -1,8 +1,8 @@
 import React from 'react'
 import Button from '../../../UI/Button/Button'
-import cl from './FilterBtns.module.scss'
+import cl from './SotringBtns.module.scss'
 
-const FilterBtns = () => {
+const SotringBtns = () => {
   const btnsFilterList: Array<string> = ['Самый дешевый', 'Самый быстрый', 'Оптимальный']
 
   // хочу сделать два типа first | last -> присваивать соотв. класс для
@@ -32,4 +32,4 @@ const FilterBtns = () => {
   )
 }
 
-export default FilterBtns
+export default SotringBtns

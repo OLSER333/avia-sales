@@ -10,28 +10,32 @@ const initialState: Transfers = {
   data: [
     {
       id: uuid(),
-      isChecked: false,
+      isChecked: true,
       label: 'Всё',
     },
     {
       id: uuid(),
-      isChecked: false,
+      isChecked: true,
       label: 'Без пересадок',
+      transfersCount: 0,
     },
     {
       id: uuid(),
-      isChecked: false,
+      isChecked: true,
       label: '1 пересадка',
+      transfersCount: 1,
     },
     {
       id: uuid(),
-      isChecked: false,
+      isChecked: true,
       label: '2 пересадки',
+      transfersCount: 2,
     },
     {
       id: uuid(),
-      isChecked: false,
+      isChecked: true,
       label: '3 пересадки',
+      transfersCount: 3,
     },
   ],
   activeCount: 0,
