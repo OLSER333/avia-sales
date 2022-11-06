@@ -1,29 +1,54 @@
 import React from 'react'
 import Button from '../../../UI/Button/Button'
 import cl from './SotringBtns.module.scss'
+import { useTypedSelector } from '../../../hooks/useTypedSelector'
+import { allSortEnum } from '../../../types/sortingBtns'
+import { useAction } from '../../../hooks/useAction'
+
+export type buttonsRadiusType = 'left' | 'right' | 'both' | '' // для вёрстки
 
 const SotringBtns = () => {
-  const btnsFilterList: Array<string> = ['Самый дешевый', 'Самый быстрый', 'Оптимальный']
+  const { curSortType, labels } = useTypedSelector((state) => state.sortingBtnsReducer)
+  const { sortByPrice, sortBySpeed, sortByOptimality } = useAction()
 
-  // хочу сделать два типа first | last -> присваивать соотв. класс для
-
-  const isRadiused = (idx: number) => {
+  const isRadiused = (idx: number): buttonsRadiusType => {
     if (idx === 0) {
-      return 'first'
-    } else if (idx === btnsFilterList.length - 1) {
-      return 'last'
+      return 'left'
+    } else if (idx === labels.length - 1) {
+      return 'right'
     } else {
       return ''
+    }
+  }
+
+  const onChangeSort = (newSort: string | undefined) => {
+    switch (newSort) {
+      case allSortEnum.price:
+        sortByPrice()
+        break
+      case allSortEnum.speed:
+        sortBySpeed()
+        break
+      case allSortEnum.optimality:
+        sortByOptimality()
+        break
     }
   }
 
   return (
     <div>
       <ul className={cl.btnFilterList}>
-        {btnsFilterList.map((btn, idx) => {
+        {labels.map((btn, idx) => {
           return (
             <li key={btn}>
-              <Button addClass={isRadiused(idx)}>{btn}</Button>
+              <Button
+                btnTypedString={btn}
+                onChangeSort={onChangeSort}
+                addClass={isRadiused(idx)}
+                active={curSortType}
+              >
+                {btn}
+              </Button>
             </li>
           )
         })}

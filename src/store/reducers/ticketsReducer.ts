@@ -2,14 +2,9 @@ import { TicketsAction, TicketsActionsTypes, TicketsState } from '../../types/ti
 
 const initialState: TicketsState = {
   tickets: [],
-  isLoading: false,
+  isLoading: true,
   showCount: 5,
 }
-
-// pending
-// errored - разница в ошибках сети и сервера?? Если код 500 - повторить запрос.
-// setTIckets
-// allTIcketsResived
 
 export const ticketsReducer = (state = initialState, action: TicketsAction): TicketsState => {
   switch (action.type) {

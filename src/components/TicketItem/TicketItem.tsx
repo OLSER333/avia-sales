@@ -6,12 +6,13 @@ import { Ticket } from '../../types/tickets'
 import { getDuration } from '../../utils/getDuration'
 import { getTimeStamps } from '../../utils/getTImeStamps'
 import { getTransfersString } from '../../utils/getTransfersString'
+import { getSpacedPrice } from '../../utils/getSpacedPrice'
 
 const TicketItem = ({ carrier, price, segments }: Ticket) => {
   return (
     <div className={cl.ticket}>
       <div className={cl.priceAndCompany}>
-        <h2 className={cl.price}>{price}</h2>
+        <h2 className={cl.price}>{getSpacedPrice(price)} ₽</h2>
         <div className={cl.company}>
           <img src={`http://pics.avs.io/99/36/${carrier}.png`} alt={company} />
         </div>
@@ -35,19 +36,6 @@ const TicketItem = ({ carrier, price, segments }: Ticket) => {
             </>
           )
         })}
-
-        {/* <li className={cl.infoItem}>*/}
-        {/*  <p>{`${flightTo.origin}-${flightBack.destination}`}</p>*/}
-        {/*  <p>10:45 – 08:00</p>*/}
-        {/* </li>*/}
-        {/* <li className={cl.infoItem}>*/}
-        {/*  <p>В пути</p>*/}
-        {/*  <p>21ч 15м</p>*/}
-        {/* </li>*/}
-        {/* <li className={cl.infoItem}>*/}
-        {/*  <p>2 пересадки</p>*/}
-        {/*  <p>HKG, JNB</p>*/}
-        {/* </li>*/}
       </ul>
     </div>
   )

@@ -38,7 +38,7 @@ const initialState: Transfers = {
       transfersCount: 3,
     },
   ],
-  activeCount: 0,
+  activeCount: 5,
 }
 export const transfersReducer = (state = initialState, action: TransfersAction): Transfers => {
   console.log('acitve', state.activeCount)
