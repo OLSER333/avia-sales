@@ -1,7 +1,7 @@
 import React from 'react'
 
 import cl from './Checkbox.module.scss'
-import { useAction } from '../../hooks/useAction'
+import { useAction } from '../../../hooks/useAction'
 
 type CheckboxPropsType = {
   label: string

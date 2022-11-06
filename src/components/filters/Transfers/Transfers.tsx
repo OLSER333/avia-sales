@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import cl from './Transfers.module.scss'
 
-import Checkbox from '../../../UI/Checkbox/Checkbox'
-import TransfersToggleBtn from '../../../UI/TransfersToggleBtn/TransfersToggleBtn'
+import Checkbox from '../../UI/Checkbox/Checkbox'
+import TransfersToggleBtn from '../../UI/TransfersToggleBtn/TransfersToggleBtn'
 import { useTypedSelector } from '../../../hooks/useTypedSelector'
 const Transfers = () => {
   const [isOpen, setIsOpen] = useState(false)

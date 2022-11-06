@@ -1,4 +1,4 @@
-@import "../../assets/styles/vars";
+@import "../../../assets/styles/vars";
 
 .checkbox {
   display: flex;
@@ -31,7 +31,7 @@
   position: absolute;
   left: calc(50% - $chech-mark-width / 2);
   top: calc(50% - $chech-mark-height / 2);
-  background: url('../../assets/img/mark.svg') 0 0 / contain no-repeat;
+  background: url('../../../assets/img/mark.svg') 0 0 / contain no-repeat;
   width: $chech-mark-width;
   height: 8px;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../../UI/Button/Button'
+import Button from '../../UI/Button/Button'
 import cl from './SotringBtns.module.scss'
 import { useTypedSelector } from '../../../hooks/useTypedSelector'
 import { allSortEnum } from '../../../types/sortingBtns'

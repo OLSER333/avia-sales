@@ -32,7 +32,12 @@ export interface Ticket {
     },
   ]
 }
-export type TicketsType = Array<Ticket>
+
+export interface IsearchId {
+  searchId: 'string'
+}
+
+export type TicketsType = Ticket[]
 export interface TicketPoolingData {
   stop: boolean
   tickets: Array<Ticket>
@@ -41,6 +46,10 @@ export interface TicketsState {
   tickets: TicketsType
   isLoading: boolean
   showCount: number
+  error: {
+    hasBadError: boolean
+    message: string
+  }
 }
 
 export enum TicketsActionsTypes {
@@ -48,6 +57,7 @@ export enum TicketsActionsTypes {
   TICKETS_LOADING = 'TICKETS_LOADING',
   TICKETS_MORE = 'TICKETS_MORE',
   TICKETS_RESET_SHOW_COUNT = 'TICKETS_RESET_SHOW_COUNT',
+  TICKETS_SET_ERROR = 'TICKETS_SET_ERROR',
 }
 
 export interface setTicketsAction {
@@ -72,8 +82,17 @@ export interface resetShowCountAction {
   type: TicketsActionsTypes.TICKETS_RESET_SHOW_COUNT
 }
 
+export interface setErrorAction {
+  type: TicketsActionsTypes.TICKETS_SET_ERROR
+  payload: {
+    errorTo: boolean
+    message: string
+  }
+}
+
 export type TicketsAction =
   | setTicketsAction
   | setLoadingAction
   | showMoreTicketsAction
   | resetShowCountAction
+  | setErrorAction

@@ -12,6 +12,7 @@ const initialState: Transfers = {
       id: uuid(),
       isChecked: true,
       label: 'Всё',
+      transfersCount: -1,
     },
     {
       id: uuid(),
