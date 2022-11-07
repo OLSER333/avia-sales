@@ -9,7 +9,7 @@ import { v4 as uuid } from 'uuid'
 const initialState: TicketsState = {
   tickets: [],
   isLoading: true,
-  showCount: 1000,
+  showCount: 5,
   error: {
     hasBadError: false,
     message: '',
