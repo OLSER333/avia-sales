@@ -13,7 +13,7 @@ const TicketItem = ({ carrier, price, segments }: Ticket) => {
       <div className={cl.priceAndCompany}>
         <h2 className={cl.price}>{getSpacedPrice(price)} ₽</h2>
         <div className={cl.company}>
-          <img src={`http://pics.avs.io/99/36/${carrier}.png`} alt={carrier} />
+          <img src={`https://pics.avs.io/99/36/${carrier}.png`} alt={carrier} />
         </div>
       </div>
       <ul className={cl.ticketInfo}>
