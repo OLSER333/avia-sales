@@ -1,4 +1,6 @@
 export interface Ticket {
+  // added after fetching
+  id?: string
   // Цена в рублях
   price: number
   // Код авиакомпании (iata)

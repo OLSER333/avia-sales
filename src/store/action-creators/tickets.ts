@@ -7,7 +7,7 @@ import {
 } from '../../types/tickets'
 import axios from 'axios'
 import { getErrorMesForUser } from '../../utils/getErrorMesForUser'
-//
+
 const doRequest = async (query = '', params = '') => {
   const apiBase = 'https://front-test.dev.aviasales.ru'
   const res = await axios.get(`${apiBase}${query}${params}`)
@@ -23,7 +23,6 @@ export const getTickets = () => {
     try {
       searchObj = await doRequest('/search')
     } catch (e: any) {
-      console.log(e)
       dispatch({ type: TicketsActionsTypes.TICKETS_LOADING, payload: { loadingTo: false } })
       dispatch({
         type: TicketsActionsTypes.TICKETS_SET_ERROR,
@@ -33,7 +32,6 @@ export const getTickets = () => {
 
     let errorsCount = 0
 
-    // eslint-disable-next-line no-constant-condition
     while (searchObj) {
       // infinity loop
       try {
@@ -53,7 +51,6 @@ export const getTickets = () => {
           break
         }
       } catch (e: any) {
-        console.log(e)
         errorsCount++ // обработка случайных ошибок 500 (вдруг оффлайн)
         if (errorsCount > 10) {
           dispatch({ type: TicketsActionsTypes.TICKETS_LOADING, payload: { loadingTo: false } })

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import cl from './ListOfTickets.module.scss'
 import TicketItem from '../TicketItem/TicketItem'
 import Button from '../UI/Button/Button'
-import { v4 as uuid } from 'uuid'
 import { TicketsState } from '../../types/tickets'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
 import Spin from '../Spin/Spin'
@@ -26,20 +25,19 @@ const ListOfTickets = () => {
     getTickets()
   }, [])
 
-  // setPartTickets(tickets.slice(0, showCount))
-
-  // ==================================================================
-
+  // sort logic here
   const ticketsForRender = UseListOfTickets(tickets, curSortType, data, showCount)
+
   const hasData = ticketsForRender.length > 0 && !error.hasBadError
   return (
     <>
       {isLoading && <Spin isLoading={isLoading} />}
 
       <div className={cl.list}>
+        {' '}
         {hasData &&
           ticketsForRender.map((el) => (
-            <TicketItem key={uuid()} price={el.price} carrier={el.carrier} segments={el.segments} />
+            <TicketItem key={el.id} price={el.price} carrier={el.carrier} segments={el.segments} />
           ))}
         {!isLoading && ticketsForRender.length === 0 && !error.hasBadError && <NoMatchData />}
         {hasData && (

@@ -11,7 +11,6 @@ import { useTypedSelector } from '../../hooks/useTypedSelector'
 
 const App = () => {
   const { error } = useTypedSelector((state) => state.ticketsReducer)
-  // const errorMes = <h1></h1>
   const notify = () =>
     toast.error(error.message, {
       position: 'top-right',

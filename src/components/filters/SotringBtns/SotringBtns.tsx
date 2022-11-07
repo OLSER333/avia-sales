@@ -11,6 +11,7 @@ const SotringBtns = () => {
   const { curSortType, labels } = useTypedSelector((state) => state.sortingBtnsReducer)
   const { sortByPrice, sortBySpeed, sortByOptimality } = useAction()
 
+  // for border-radius styles
   const isRadiused = (idx: number): buttonsRadiusType => {
     if (idx === 0) {
       return 'left'

@@ -1,7 +1,3 @@
-// Если включается галочка "Все" - проставляются галочки всем остальным фильтрам
-// Если снимается галочка "Все" - снимаются все остальные фильтры
-// Если при включенной галочке "Все" снимается любая другая галочка - галочка "Все" тоже снимается
-// Если проставить каждую галочку по пересадкам - галочка "Все" автоматически включится
 import { v4 as uuid } from 'uuid'
 
 import { Transfers, TransfersAction, TransfersActionTypes } from '../../types/transfers'
@@ -42,7 +38,6 @@ const initialState: Transfers = {
   activeCount: 5,
 }
 export const transfersReducer = (state = initialState, action: TransfersAction): Transfers => {
-  console.log('acitve', state.activeCount)
   switch (action.type) {
     case TransfersActionTypes.TRANSFERS_TOGGLE:
       // eslint-disable-next-line no-case-declarations

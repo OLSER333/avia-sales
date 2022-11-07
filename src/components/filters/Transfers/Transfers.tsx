@@ -25,7 +25,6 @@ const Transfers = () => {
   }, [])
 
   const { data } = useTypedSelector((state) => state.transfersReducer)
-  console.log(data)
 
   return (
     <div className={`${cl.window} ${isOpen ? cl.windowIsOpen : ''}`}>

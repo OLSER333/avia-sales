@@ -14,7 +14,6 @@ export const sortingBtnsReducer = (
   state = initialState,
   action: SortingBtnsAction,
 ): SortingBtns => {
-  console.log('iState', initialState, action)
   switch (action.type) {
     case SortingBtnsActionTypes.SORTING_BTNS_BY_PRICE:
       return { ...state, curSortType: action.payload.curSortTypeTo }

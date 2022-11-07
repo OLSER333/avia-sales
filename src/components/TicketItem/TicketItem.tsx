@@ -1,7 +1,6 @@
 import React from 'react'
 
 import cl from './TicketItem.module.scss'
-import company from '../../assets/img/company.png'
 import { Ticket } from '../../types/tickets'
 import { getDuration } from '../../utils/getDuration'
 import { getTimeStamps } from '../../utils/getTImeStamps'
@@ -14,7 +13,7 @@ const TicketItem = ({ carrier, price, segments }: Ticket) => {
       <div className={cl.priceAndCompany}>
         <h2 className={cl.price}>{getSpacedPrice(price)} ₽</h2>
         <div className={cl.company}>
-          <img src={`http://pics.avs.io/99/36/${carrier}.png`} alt={company} />
+          <img src={`http://pics.avs.io/99/36/${carrier}.png`} alt={carrier} />
         </div>
       </div>
       <ul className={cl.ticketInfo}>
@@ -22,15 +21,15 @@ const TicketItem = ({ carrier, price, segments }: Ticket) => {
           return (
             <>
               <li className={cl.infoItem}>
-                <p>{`${el.origin} – ${el.destination}`}</p>
+                <p className={cl.supTxt}>{`${el.origin} – ${el.destination}`}</p>
                 <p>{getTimeStamps(el.date, el.duration)}</p>
               </li>
               <li className={cl.infoItem}>
-                <p>В пути</p>
+                <p className={cl.supTxt}>В пути</p>
                 <p>{getDuration(el.duration)}</p>
               </li>
               <li className={cl.infoItem}>
-                <p>{getTransfersString(el.stops.length)}</p>
+                <p className={cl.supTxt}>{getTransfersString(el.stops.length)}</p>
                 <p>{el.stops.join(', ')}</p>
               </li>
             </>
