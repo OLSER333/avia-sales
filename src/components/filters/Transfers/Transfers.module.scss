@@ -14,6 +14,7 @@ $tempWidth: 416px;
     position: fixed;
     left: -100%;
     top: 0;
+    z-index: 10;
   }
 
   @media (max-width: $toMobile) {
