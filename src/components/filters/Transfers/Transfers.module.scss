@@ -7,8 +7,8 @@ $tempWidth: 416px;
   flex-direction: column;
   border-radius: $border-radius;
   padding-bottom: 10px;
-  height: 100%;
   transition: all $tr-time ease;
+  height: fit-content;
   @media (max-width: $toBurger) {
     width: $tempWidth;
     position: fixed;
